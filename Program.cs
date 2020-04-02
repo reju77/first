@@ -1,28 +1,28 @@
 ﻿using System;
 
-
-namespace projekt1
+namespace projekt2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string rownanie;
-            double x, xMin, xMax;
+            string rownanie;  
+            double x,xmin, xmax;
             int n;
 
             rownanie = args[0];
-            x = double.Parse(args[1]);
-            xMin = double.Parse(args[2]);
-            xMax = double.Parse(args[3]);
-            n = int.Parse(args[4]);
+            x=double.Parse(args[1]);
+            xmin=double.Parse(args[2]);
+            xmax=double.Parse(args[3]);            
+            n=int.Parse(args[4]);
 
-            RPN sprawdz = new RPN(rownanie, x, xMin, xMax, n);
-            sprawdz.Tokeny();
-            sprawdz.walidacja();
-            sprawdz.Postfix();
-            Console.WriteLine(sprawdz.oblicz());
-            sprawdz.Przedzial();
+            RPN przyklad = new RPN(rownanie,x,xmin,xmax,n);
+            przyklad.naTokeny();
+            przyklad.wyswietlTokeny();
+            przyklad.walidacja();            
+            przyklad.naPostfix();
+            Console.WriteLine(przyklad.oblicz());
+            przyklad.obliczPrzedzial();
         }
     }
 }
